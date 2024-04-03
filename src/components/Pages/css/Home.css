@@ -1,0 +1,236 @@
+.home{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+}
+.content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.mainContent{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 90px;
+    animation: fade-right 1.2s ease-in-out;
+}
+.mainContent h2{
+    margin-bottom: 5px;
+    font-size: 25px;
+    font-weight: 600;
+    font-style: italic;
+    letter-spacing: 2px;
+    background: linear-gradient(to top, rgb(106, 8, 233), rgb(220, 0, 240));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.mainContent h1{
+    font-size: 43px;
+    font-weight: 700;
+    font-style: normal;
+    color: transparent;
+    background: linear-gradient(to bottom, rgb(106, 8, 233), rgb(220, 0, 240));
+    background-clip: text;
+    -webkit-background-clip: text;
+    margin-left: 150px;
+    transform: scale(1.5);
+    letter-spacing: 5px;
+    transition: 0.7s ease-out;
+}
+.mainContent h3{
+    margin: 20px 0;
+    font-size: 23px;
+    letter-spacing: 2px;
+    background: linear-gradient(to left, rgb(106, 8, 233), rgb(220, 0, 240));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.text-anim {
+    width: 34%;
+    border-right: 2px solid #fafafa;
+    padding: 0;
+    padding-right: 5px;
+    white-space: nowrap;
+    /* overflow: hidden; */
+    animation: typing 6s steps(18) infinite,
+                cursor 0.3s step-end infinite alternate;
+}
+.light .text-anim{
+    border-right: 2px solid #000;
+}
+
+.mainContent p{
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.7;
+    letter-spacing: 1.2px;
+}
+.mainContent .btn{
+    margin-top: 20px;
+    width: auto;
+    display: flex;
+    gap: 20px;
+    transition: 0.5s ease-in;
+}
+.mainContent button{
+    width: auto;
+    height: 40px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to left, rgb(106, 8, 233), rgb(220, 0, 240));
+    color: #141414;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 10px;
+}
+.dark .mainContent button{
+    color: #fafafa;
+}
+.mainContent button:hover{
+    box-shadow:0 0 2rem #E212A4;
+    transform: translateY(5px);
+    transition: transform 0.5s ease;
+}
+.dark .mainContent button:hover{
+    box-shadow:0 0 2rem #E212A4, 0 0 3rem #3538e7, 0 0 4rem #3538e7;
+    transform: translateY(5px);
+    transition: transform 0.5s ease;
+}
+.svgContent{
+    padding-top: 20px;
+    width: 40%;
+    height: auto;
+    
+}
+.svgContent img{
+    width: 90%;
+    aspect-ratio: 1/1;
+    animation: fade-right 1.2s ease-in-out;
+}
+@keyframes fade-right {
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+    to{
+        opacity:1;
+        transform: scale(1);
+    }
+}
+@keyframes cursor {
+    50%{
+       border-color: transparent;
+    }
+   }
+   @keyframes typing {
+       from{
+           width:5px;
+       }
+   }
+@media  screen and (max-width:768px) {
+    .content{
+        flex-direction: column-reverse;
+        justify-content: center;
+        padding-top: 50px;
+    }
+    .mainContent{
+        width: 100%;
+        padding: 0 20px;
+    }
+    .mainContent button:hover{
+        transform: none;
+    }
+    .svgContent img{
+        width: 120%;
+    }
+    .btn{
+        width: 100%;
+        justify-content: space-evenly;
+    }
+}
+
+@media  screen and (min-width:769px) and (max-width:1020px){
+    .home{
+        padding-top: 50px;
+    }
+    .content{
+        flex-direction: column-reverse;
+        justify-content: center;
+        padding-top: 20px;
+    }
+    .mainContent{
+        width: 100%;
+    }
+    .mainContent h2{
+        font-size: 25px;
+        margin-top: 40px;
+        margin-bottom: -40px;
+    }
+    .mainContent h1{
+        transform: scale(1.2);
+        margin-left: 120px;
+        margin-top: 70px;
+        margin-bottom: 20px;
+    }
+    .mainContent h3{
+        margin: 0;
+    }
+    .mainContent p{
+        font-size: 16px ;
+    }
+    .mainContent button:hover{
+        transform: none;
+    }
+    .svgContent{
+        margin-bottom: -90px;
+    }
+    .svgContent img{
+        width: 120%;
+    }
+}
+
+@media screen and (min-width:1500px){
+    .home{
+        padding-top:100px;
+    }
+    .content {
+        padding-left: 20px;
+    }
+    .mainContent h2{
+        font-size: 35px;
+        margin-bottom: 25px;
+    }
+    .mainContent h1{
+        font-size: 55px;
+        margin-left: 220px;
+        margin-bottom: 30px;
+    }
+    .mainContent h3{
+        font-size: 27px;
+        transform: scaleY(1.2);
+        margin-bottom: 20px;
+    }
+    .mainContent p{
+        font-size: 19px;
+        line-height: 2;
+        margin-bottom: 40px;
+    }
+    .mainContent button{
+        height: 50px;
+        font-size: 20px;
+        font-weight: 600;
+        padding: 10px;
+    }
+}

@@ -1,0 +1,306 @@
+
+.navbar{
+    width: 90%;
+    height: 70px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 10px;
+    top: 10px;
+    z-index: 999999;
+    background-color: transparent;
+    position: fixed;
+    left: 70px;
+    border-radius: 30px;
+  }
+  .navbar.scrolled{
+    background-color: transparent;
+    backdrop-filter: blur(30px);
+    box-shadow: 1px 1px 25px #3d3c3c;
+  }
+  .dark .navbar.scrolled{
+    box-shadow: 1px 1px 25px #adaaaa;
+  }
+  .navbar .logo{
+    width: 30%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    align-items: center;
+    padding-left: 40px;
+  }
+  .logo img{
+    width: 40px;
+    height: 40px;
+  }
+  .logo h2{
+    font-size: 20px;
+    font-weight: 700;
+    color: transparent;
+    background-image: linear-gradient(to bottom, rgb(106, 8, 233), rgb(220, 0, 240));
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  .icons{
+    width: 40px;
+    display: none;
+    cursor: pointer;
+  }
+  .icons .menu-icons{
+    width: 25px;
+    height: 25px;
+  }
+  .navbar ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    width: 45%;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 10px;
+    justify-content: space-evenly;
+  }
+  
+  .navbar ul li{
+    cursor: pointer;  
+    padding: 5px 5px 8px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .navbar ul li::after{
+    content: " ";
+    position: absolute;
+    width: 95%;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    background-image: linear-gradient(to bottom, rgb(106, 8, 233), rgb(220, 0, 240));
+    transform-origin: right;
+   
+  }
+  .light .navbar ul li::after{
+    background-color: #000080;
+  }
+  .navbar ul li:hover{
+    transform: scale(1.2);
+    transition: transform 0.4s ease-in-out;
+  }
+  .navbar ul li a {
+    position: relative;
+    font-size: 18px;
+    font-weight: 800;
+    text-decoration: none;
+    background-image: linear-gradient(to bottom, rgb(106, 8, 233), rgb(220, 0, 240));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  
+  .active:hover::after, .light .active:hover::after{
+    animation: none;
+    opacity: 0;
+  }
+  .active::after{
+    position: absolute;
+    content: '';
+    height: 4px;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgb(106, 8, 233), rgb(220, 0, 240));
+    left: 0;
+    bottom: -8px;
+    transform-origin: left;
+    animation: slide 0.5s ease-in-out;
+  }
+  .toggletheme{ 
+    position: relative;
+    top: 20px;
+    width: 70px;
+    height:30px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    background-color: #c4bdbd80;
+    transition: background-color 0.7s  ease-in-out;
+  }
+  .dark-mode,
+  .light-mode{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.9s ease-in-out;
+  }
+  .moon,
+  .sun{
+    opacity: 1;
+    width: 27px;
+    height:27px;
+    transform: rotate(-25deg);
+    padding: 4px;
+    transition: opacity 0.6s ease-in-out; 
+  }
+  .dark-mode .sun{
+   opacity: 0.2;
+   margin-left: 2px;
+  }
+  .dark-mode .moon{
+    color: #070433;
+    border-radius: 50%;
+    background-image: linear-gradient(to bottom, rgb(106, 8, 233), rgb(220, 0, 240));
+  }
+  .light-mode .moon{
+    opacity: 0.1;
+    margin-right: 2px;
+   }
+   .light-mode .sun{
+     color: #070433;
+     border-radius: 50%;
+     background-image: linear-gradient(to bottom, rgb(106, 8, 233), rgb(220, 0, 240));
+   }
+   @keyframes slide {
+    from{
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to{
+      opacity: 1;
+      transform: translateX(0);
+    }
+   }
+  
+   @media screen and (max-width:1024px) {
+    .navbar {
+      width: 100%;
+      background-color: transparent;
+      position: fixed; 
+      top: 0; 
+      left: 0;
+      width: 100%;
+      backdrop-filter: blur(20px);
+      z-index: 999; 
+      height: 70px;
+      border-radius: 0;
+    }
+    .logo {
+      position: absolute;
+      left: 10px;
+      top: 15px;
+      height: 50px;
+      pointer-events: none;
+    }
+    .icons {
+      position: absolute;
+      right: 100px;
+      top: 20px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+      transition: transform 0.4s ease;
+    }
+    .icons .hamburger {
+      width: 25px;
+      height: 25px;
+    }
+    .navbar ul {
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      height: 300px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      background-color: rgba(34, 33, 33, 0.9);
+      backdrop-filter: blur(20px);
+      z-index: 1111;
+      border-radius: 0 0 20px 20px;
+    }
+    .light .navbar ul{
+      background-color: rgba(219, 216, 216, 0.884); 
+      backdrop-filter: blur(20px);
+    }
+    .navbar ul li:hover {
+      transform: none;
+    }
+    .navbar ul li:hover::after{
+      transform: none;
+      opacity: 0;
+      animation: none;
+    }
+    .navbar .menu-open {
+      display: none;
+    }
+    .navbar .menu-closed {
+      font-size: 19px;
+      font-weight: 700;
+      transition: opacity 0.5s ease-in-out;
+      animation: flowdown 0.7s ease-in-out;
+    }
+    .navbar .menu-closed li {
+      padding: none;
+      animation: translate 0.7s ease-in-out;
+    }
+    .active::after, .dark .active::after {
+      opacity: 0;
+      animation: none;
+    }
+    .menu-icons {
+      transition: transform 0.7s ease-in-out;
+    }
+    .menu-open .menu-icons {
+      transform: rotate(90deg);
+    }
+    .menu-closed .menu-icons {
+      transform: rotate(0deg);
+    }
+    .toggletheme {
+      position: absolute;
+      top: 23px;
+      right: 10px;
+    }
+    @keyframes translate {
+      from {
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: transform 0.4s ease-in-out;
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+        transition: transform 0.4s ease-in-out;
+      }
+    }
+    @keyframes flowdown {
+      from {
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: transform 0.7s ease-in-out;
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+        transition: transform 0.7s ease-in-out;
+      }
+    }
+  }
+  @media screen and (min-width:1500px) {
+    .navbar{
+      height: 90px;
+      padding: 0 5px;
+    }
+    .logo h2{
+      font-size: 30px;
+    }
+    .navbar ul li a{
+      font-size: 22px;
+    }
+    .toggletheme{
+      top: 28px;
+    }
+  }

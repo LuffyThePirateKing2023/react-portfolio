@@ -1,0 +1,134 @@
+
+
+.mySkill{
+    width: 100%;
+    height: auto;
+    display: grid;
+    place-items: center;
+}
+.skill-container{
+    width: 90%;
+    height: auto;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;   
+}
+.header-content{
+    padding:30px;
+    display: grid;
+    place-items: center;
+}
+.header-content h2{
+    font-size: 25px;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    background: linear-gradient(to top, rgb(106, 8, 233), rgb(220, 0, 240));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.header-content p{
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.3;
+}
+.header-content .forSpan{
+    display: block;
+    margin-top: 30px;
+    font-weight: 500;
+}
+.skill-content {
+    width:100%;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+.skillset{
+    width: 70%;
+}
+.skillset:hover{
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in;
+}
+.skillset .text{
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7px;
+    font-size: 14px;
+}
+.skillset .text h2{
+    font-size: 14px;
+}
+.skillset .meter{
+    width: 100%;
+    height: 10px;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 1px 1px 10px #1b1a1a;
+}
+.dark .skillset .meter{
+    box-shadow: 1px 1px 10px #f845da ;
+}
+.percent-meter{
+    height: 100%;
+    border-radius: 0 5px 5px 0;
+}
+.meter .first{ width: 80%; }
+.meter .second{ width: 75%; }
+.meter .third{ width: 60%; }
+.meter .fourth{ width: 70%; }
+.meter .fifth{ width: 65%; }
+.meter .six{ width: 75%; }
+.meter .seven{ width: 55%; }
+.meter .eight{ width: 50%; }
+.meter .nine{ width: 50%; }
+.meter .ten{ width: 45%; }
+.meter .eleven{ width: 50%; }
+.meter .twelve{ width: 40%; }
+
+.meter .ten, .meter .eleven, .meter .nine, .meter .eight, .meter .twelve{
+    background: linear-gradient(to right, #FFA500, #FF4500);
+}
+.second, .third, .fourth, .fifth, .six, .seven{
+    background: linear-gradient(to right, #FFFF00, #FFD700);
+}
+.first{
+    background: linear-gradient(to right, #7FFF00, #32CD32);
+}
+@media screen and (max-width:768px) {
+    .skill-container{
+        width: 100%;
+    }
+    .header-content p{
+        padding: 0 10px;
+    }
+    .skill-content {
+        grid-template-columns: 1fr;
+        transform: translateX(-12px);
+    }
+    .skillset:hover{
+        transform: none;
+        transition: none;
+    }
+}
+@media screen and (min-width:769px) and (max-width:1020px) {
+    .skill-container{
+        width: 100%;
+    }
+    .header-content p{
+        padding: 0 10px;
+    }
+    .skill-content {
+        grid-template-columns: 1fr;
+        transform: translateX(-12px);
+    }
+    .skillset:hover{
+        transform: none;
+        transition: none;
+    }
+}
